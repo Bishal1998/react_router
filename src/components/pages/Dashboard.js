@@ -1,8 +1,13 @@
-
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+    
+    let navigate = useNavigate()
   return (
-    <div>Dashboard</div>
+    <div>
+        <h1>Dashboard</h1>
+        <button onClick={() => {navigate('/logout')}}>Logout</button>
+    </div>
   )
 }
 

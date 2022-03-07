@@ -7,10 +7,11 @@ import Error from './components/Error';
 import Post from './components/pages/Post';
 import Dashboard from './components/pages/Dashboard';
 import Login from './components/pages/Login';
+import Logout from './components/pages/Logout';
 
 function App() {
 
-  let isLogged = false;
+  let isLogged = true;
   let data = {
     st : "logged out"
   }
@@ -27,6 +28,7 @@ function App() {
         <Route path='/post/:category/:id' element = { <Post />} />
         <Route path='/dashboard' element = { isLogged ? <Dashboard /> : <Navigate to = '/login' replace state={data}/>} />
         <Route path='/login' element = { <Login />} />
+        <Route path='/logout' element = { <Logout />} />
         <Route path = '*' element = { <Error />} />
       </Routes>
     </BrowserRouter>
