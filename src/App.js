@@ -11,6 +11,9 @@ import Login from './components/pages/Login';
 function App() {
 
   let isLogged = false;
+  let data = {
+    st : "logged out"
+  }
 
   return (
     <>
@@ -22,7 +25,7 @@ function App() {
         <Route path='/contact' element = { <Contact />} />
         <Route path='/post/:category' element = { <Post />} />
         <Route path='/post/:category/:id' element = { <Post />} />
-        <Route path='/dashboard' element = { isLogged ? <Dashboard /> : <Navigate to = '/login' replace />} />
+        <Route path='/dashboard' element = { isLogged ? <Dashboard /> : <Navigate to = '/login' replace state={data}/>} />
         <Route path='/login' element = { <Login />} />
         <Route path = '*' element = { <Error />} />
       </Routes>
